@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Yauto Car Care | Quality Auto Repair</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #fff;
+  color: #111;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: 92%;
+  max-width: 1120px;
+  margin: auto;
+}
+
+header {
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav {
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+.logo span {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 3px;
+  font-weight: 700;
+}
+
+nav {
+  display: flex;
+  gap: 28px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  opacity: .6;
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 22px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 800;
+  border: 2px solid #111;
+  transition: .2s;
+}
+
+.btn-dark {
+  background: #111;
+  color: #fff;
+}
+
+.btn-dark:hover {
+  background: #333;
+}
+
+.btn-light {
+  background: #fff;
+  color: #111;
+}
+
+.btn-light:hover {
+  background: #eee;
+}
+
+.directions-btn {
+  background: #111;
+  color: #fff !important;
+  padding: 9px 14px;
+  border-radius: 4px;
+  margin-top: -9px;
+}
+
+/* HERO */
+.hero {
+  background: #111;
+  color: #fff;
+  padding: 85px 0;
+}
+
+.hero-layout {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  align-items: center;
+  gap: 55px;
+}
+
+.hero-content {
+  max-width: 780px;
+}
+
+.kicker,
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 3px;
+  font-weight: 900;
+}
+
+.kicker {
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: clamp(48px, 8vw, 86px);
+  line-height: .95;
+  letter-spacing: -4px;
+  margin-bottom: 25px;
+}
+
+.hero p {
+  color: #d0d0d0;
+  font-size: 19px;
+  max-width: 620px;
+  margin-bottom: 32px;
+}
+
+/* SHOP PHOTO */
+.hero-photo {
+  width: 100%;
+  height: 430px;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 18px 45px rgba(0,0,0,.35);
+}
+
+.hero .btn-dark {
+  background: #fff;
+  color: #111;
+  border-color: #fff;
+}
+
+.hero .btn-light {
+  background: transparent;
+  color: #fff;
+  border-color: #777;
+}
+
+section {
+  padding: 90px 0;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 30px;
+  margin-bottom: 42px;
+}
+
+.section-head p {
+  max-width: 450px;
+  color: #666;
+}
+
+h2 {
+  font-size: 42px;
+  line-height: 1.05;
+  letter-spacing: -2px;
+  margin-top: 10px;
+}
+
+.services {
+  background: #f5f5f3;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  padding: 30px;
+  min-height: 225px;
+}
+
+.icon {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.card h3 {
+  font-size: 18px;
+  margin-bottom: 9px;
+}
+
+.card p {
+  font-size: 14px;
+  color: #666;
+}
+
+.diagnostic-btn {
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.more {
+  margin-top: 20px;
+  padding: 30px;
+  background: #111;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.more p {
+  color: #bbb;
+  font-size: 14px;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.about-copy p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.why {
+  background: #111;
+  color: #fff;
+}
+
+.why .section-head p {
+  color: #aaa;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: #333;
+}
+
+.why-card {
+  background: #111;
+  padding: 35px;
+}
+
+.why-card h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.why-card p {
+  color: #aaa;
+  font-size: 14px;
+}
+
+.cta {
+  background: #f5f5f3;
+  text-align: center;
+}
+
+.cta h2 {
+  max-width: 700px;
+  margin: 10px auto 18px;
+}
+
+.cta p {
+  color: #666;
+  max-width: 620px;
+  margin: 0 auto 28px;
+}
+
+.center {
+  justify-content: center;
+}
+
+/* SERVICE REQUEST */
+#request {
+  background: #fff;
+}
+
+#request form {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+#request label {
+  display: block;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 7px;
+}
+
+#request input,
+#request select,
+#request textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #fff;
+  color: #111;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+#request input:focus,
+#request select:focus,
+#request textarea:focus {
+  outline: none;
+  border-color: #111;
+}
+
+#request textarea {
+  resize: vertical;
+}
+
+#request button {
+  cursor: pointer;
+}
+
+/* CONTACT */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+.contact-box {
+  border-top: 3px solid #111;
+  padding-top: 20px;
+  margin-bottom: 25px;
+}
+
+.contact-box small {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 800;
+  font-size: 10px;
+  color: #777;
+  margin-bottom: 5px;
+}
+
+.contact-box strong {
+  font-size: 18px;
+}
+
+.contact-box a {
+  text-decoration: underline;
+}
+
+footer {
+  background: #111;
+  color: #fff;
+  padding: 35px 0;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer p {
+  color: #999;
+  font-size: 12px;
+}
+
+@media (max-width:750px) {
+
+  nav {
+    display: none;
+  }
+
+  .hero {
+    padding: 65px 0;
+  }
+
+  .hero-layout {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .hero-photo {
+    height: 300px;
+  }
+
+  h1 {
+    font-size: 52px;
+    letter-spacing: -2px;
+  }
+
+  section {
+    padding: 65px 0;
+  }
+
+  .section-head {
+    display: block;
+  }
+
+  .section-head p {
+    margin-top: 20px;
+  }
+
+  .grid,
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    min-height: auto;
+  }
+
+  .more {
+    display: block;
+  }
+
+  .more .btn {
+    margin-top: 18px;
+  }
+
+  .about,
+  .contact-grid {
+    display: block;
+  }
+
+  .about-copy {
+    margin-top: 30px;
+  }
+
+  .contact-grid {
+    margin-top: 30px;
+  }
+
+  .footer {
+    display: block;
+  }
+
+  footer p {
+    margin-top: 10px;
+  }
+
+  #request form > div {
+    grid-template-columns: 1fr !important;
+  }
+
+  #request form > div > div[style*="grid-column"] {
+    grid-column: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+
+    <a href="#" class="logo">
+      Yauto Car Care
+      <span>AUTO REPAIR & SERVICE</span>
+    </a>
+
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#why">Why Yauto</a>
+      <a href="#contact">Contact</a>
+
+      <a
+        href="https://www.google.com/maps/dir/?api=1&destination=4035+Great+W+Pkwy,+Union+City,+GA+30291"
+        target="_blank"
+        class="directions-btn"
+      >
+        Get Directions
+      </a>
+    </nav>
+
+  </div>
+</header>
+
+
+<!-- HERO -->
+<section class="hero">
+
+  <div class="container hero-layout">
+
+    <div class="hero-content">
+
+      <div class="kicker">
+        TRUSTED AUTO REPAIR IN UNION CITY
+      </div>
+
+      <h1>
+        KEEP YOUR CAR<br>
+        RUNNING RIGHT.
+      </h1>
+
+      <p>
+        Reliable repairs, diagnostics, maintenance, and automotive service
+        for drivers in Union City and the surrounding area.
+      </p>
+
+      <div class="buttons">
+
+        <a href="#request" class="btn btn-dark">
+          REQUEST SERVICE
+        </a>
+
+        <a href="tel:6787704908" class="btn btn-light">
+          CALL US
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div>
+      <img
+        src="yauto-shop.jpg"
+        alt="Yauto Car Care shop in Union City"
+        class="hero-photo"
+      >
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- SERVICES -->
+<section class="services" id="services">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <div>
+
+        <div class="eyebrow">
+          WHAT WE DO
+        </div>
+
+        <h2>
+          COMPLETE AUTO<br>
+          CARE.
+        </h2>
+
+      </div>
+
+      <p>
+        From routine maintenance to complex repairs, Yauto Car Care
+        helps keep your vehicle safe, reliable, and road-ready.
+      </p>
+
+    </div>
+
+
+    <div class="grid">
+
+      <div class="card">
+
+        <div class="icon">⚙</div>
+
+        <h3>
+          Diagnostics
+        </h3>
+
+        <p>
+          Professional diagnostic testing to help identify warning
+          lights, performance problems, and vehicle issues.
+        </p>
+
+        <p style="margin-top:15px;">
+          Diagnostic testing starts at $80. Additional charges may apply
+          depending on the vehicle and diagnostic requirements.
+        </p>
+
+        <a
+          href="#request"
+          class="btn btn-dark diagnostic-btn"
+        >
+          REQUEST A DIAGNOSTIC
+        </a>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="icon">🔧</div>
+
+        <h3>
+          Auto Repairs
+        </h3>
+
+        <p>
+          Reliable repairs for a wide range of automotive problems,
+          from everyday issues to more involved repairs.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="icon">🛠</div>
+
+        <h3>
+          Maintenance
+        </h3>
+
+        <p>
+          Routine maintenance designed to help extend the life of your
+          vehicle and prevent avoidable problems.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="icon">🛢</div>
+
+        <h3>
+          Oil Changes
+        </h3>
+
+        <p>
+          Keep your engine properly lubricated with regular oil changes
+          and vehicle maintenance.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="icon">◉</div>
+
+        <h3>
+          Brakes
+        </h3>
+
+        <p>
+          Brake inspection, service, and repairs to help keep your
+          vehicle stopping properly.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="icon">⚡</div>
+
+        <h3>
+          Engine Work
+        </h3>
+
+        <p>
+          Engine-related inspections, repairs, and service for a variety
+          of vehicle concerns.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="more">
+
+      <div>
+
+        <h3>
+          NEED SOMETHING ELSE?
+        </h3>
+
+        <p>
+          Contact us to discuss your vehicle's needs.
+        </p>
+
+      </div>
+
+      <a href="#request" class="btn btn-light">
+        GET A QUOTE
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ABOUT -->
+<section id="about">
+
+  <div class="container about">
+
+    <div>
+
+      <div class="eyebrow">
+        ABOUT YAUTO
+      </div>
+
+      <h2>
+        HONEST SERVICE.<br>
+        QUALITY WORK.
+      </h2>
+
+    </div>
+
+
+    <div class="about-copy">
+
+      <p>
+        At Yauto Car Care, we focus on providing dependable automotive
+        service while keeping customers informed about their vehicles.
+      </p>
+
+      <p>
+        Whether you need routine maintenance, diagnostics, or a repair,
+        our goal is to help you understand the issue and get your vehicle
+        back on the road.
+      </p>
+
+      <a href="#request" class="btn btn-dark">
+        REQUEST SERVICE
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- WHY YAUTO -->
+<section class="why" id="why">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <div>
+
+        <div class="eyebrow">
+          WHY YAUTO
+        </div>
+
+        <h2>
+          BUILT AROUND<br>
+          YOUR VEHICLE.
+        </h2>
+
+      </div>
+
+      <p>
+        Automotive service should be straightforward. We focus on
+        communication, reliable work, and helping customers make
+        informed decisions about their vehicles.
+      </p>
+
+    </div>
+
+
+    <div class="why-grid">
+
+      <div class="why-card">
+
+        <h3>
+          CLEAR COMMUNICATION
+        </h3>
+
+        <p>
+          We explain vehicle concerns and service needs in a way
+          that's easy to understand.
+        </p>
+
+      </div>
+
+
+      <div class="why-card">
+
+        <h3>
+          QUALITY SERVICE
+        </h3>
+
+        <p>
+          Our focus is dependable automotive work and proper service
+          for your vehicle.
+        </p>
+
+      </div>
+
+
+      <div class="why-card">
+
+        <h3>
+          LOCAL & CONVENIENT
+        </h3>
+
+        <p>
+          Conveniently located in Union City for drivers throughout
+          the surrounding area.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CTA -->
+<section class="cta">
+
+  <div class="container">
+
+    <div class="eyebrow">
+      READY TO GET STARTED?
+    </div>
+
+    <h2>
+      LET'S GET YOUR VEHICLE<br>
+      BACK ON THE ROAD.
+    </h2>
+
+    <p>
+      Contact Yauto Car Care or submit a service request online.
+    </p>
+
+    <div class="buttons center">
+
+      <a
+        href="tel:6787704908"
+        class="btn btn-dark"
+      >
+        CALL YAUTO
+      </a>
+
+      <a
+        href="#request"
+        class="btn btn-light"
+      >
+        REQUEST SERVICE
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- SERVICE REQUEST -->
+<section id="request">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <div>
+
+        <div class="eyebrow">
+          SERVICE REQUEST
+        </div>
+
+        <h2>
+          UNABLE TO REACH US?<br>
+          REQUEST SERVICE ONLINE.
+        </h2>
+
+      </div>
+
+      <p>
+        Tell us what your vehicle needs and we'll get back to you as
+        soon as possible. Online requests are not confirmed appointments
+        until Yauto Car Care contacts you.
+      </p>
+
+    </div>
+
+
+    <form
+      action="https://formspree.io/f/meaonrbb"
+      method="POST"
+    >
+
+      <input
+        type="hidden"
+        name="_subject"
+        value="New Yauto Car Care Service Request"
+      >
+
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+
+        <div>
+
+          <label for="name">
+            FULL NAME
+          </label>
+
+          <input
+            type="text"
+            id="name"
+            name="Name"
+            placeholder="Your full name"
+            required
+          >
+
+        </div>
+
+
+        <div>
+
+          <label for="phone">
+            PHONE NUMBER
+          </label>
+
+          <input
+            type="tel"
+            id="phone"
+            name="Phone"
+            placeholder="(678) 000-0000"
+            required
+          >
+
+        </div>
+
+
+        <div>
+
+          <label for="email">
+            EMAIL
+          </label>
+
+          <input
+            type="email"
+            id="email"
+            name="Email"
+            placeholder="you@email.com"
+            required
+          >
+
+        </div>
+
+
+        <div>
+
+          <label for="service">
+            SERVICE NEEDED
+          </label>
+
+          <select
+            id="service"
+            name="Service Needed"
+            required
+          >
+
+            <option value="">
+              Select a service
+            </option>
+
+            <option value="Diagnostic Testing">
+              Diagnostic Testing
+            </option>
+
+            <option value="Auto Repair">
+              Auto Repair
+            </option>
+
+            <option value="Maintenance">
+              Maintenance
+            </option>
+
+            <option value="Oil Change">
+              Oil Change
+            </option>
+
+            <option value="Brakes">
+              Brakes
+            </option>
+
+            <option value="Engine Work">
+              Engine Work
+            </option>
+
+            <option value="Other / Not Sure">
+              Other / Not Sure
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div>
+
+          <label for="year">
+            VEHICLE YEAR
+          </label>
+
+          <input
+            type="text"
+            id="year"
+            name="Vehicle Year"
+            placeholder="2020"
+          >
+
+        </div>
+
+
+        <div>
+
+          <label for="make">
+            VEHICLE MAKE
+          </label>
+
+          <input
+            type="text"
+            id="make"
+            name="Vehicle Make"
+            placeholder="Nissan"
+          >
+
+        </div>
+
+
+        <div>
+
+          <label for="model">
+            VEHICLE MODEL
+          </label>
+
+          <input
+            type="text"
+            id="model"
+            name="Vehicle Model"
+            placeholder="Altima"
+          >
+
+        </div>
+
+
+        <div>
+
+          <label for="date">
+            PREFERRED DATE
+          </label>
+
+          <input
+            type="date"
+            id="date"
+            name="Preferred Date"
+          >
+
+        </div>
+
+
+        <div>
+
+          <label for="time">
+            PREFERRED TIME
+          </label>
+
+          <select
+            id="time"
+            name="Preferred Time"
+          >
+
+            <option value="">
+              Select a time
+            </option>
+
+            <option value="Morning">
+              Morning
+            </option>
+
+            <option value="Midday">
+              Midday
+            </option>
+
+            <option value="Afternoon">
+              Afternoon
+            </option>
+
+            <option value="Evening">
+              Evening
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div style="grid-column:1 / -1;">
+
+          <label for="message">
+            TELL US ABOUT THE VEHICLE
+          </label>
+
+          <textarea
+            id="message"
+            name="Vehicle Problem"
+            rows="6"
+            placeholder="Tell us what's going on with your vehicle..."
+          ></textarea>
+
+        </div>
+
+      </div>
+
+
+      <p style="font-size:13px;color:#666;margin:20px 0;">
+
+        Please note: Online requests are not confirmed appointments.
+        Yauto Car Care will contact you to confirm availability.
+        Walk-ins are welcome and may affect scheduling.
+
+      </p>
+
+
+      <button
+        type="submit"
+        class="btn btn-dark"
+      >
+        SUBMIT SERVICE REQUEST
+      </button>
+
+    </form>
+
+  </div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact">
+
+  <div class="container">
+
+    <div class="eyebrow">
+      CONTACT
+    </div>
+
+    <h2>
+      GET IN<br>
+      TOUCH.
+    </h2>
+
+
+    <div class="contact-grid">
+
+      <div class="contact-box">
+
+        <small>
+          Phone
+        </small>
+
+        <strong>
+          <a href="tel:6787704908">
+            (678) 770-4908
+          </a>
+        </strong>
+
+      </div>
+
+
+      <div class="contact-box">
+
+        <small>
+          Address
+        </small>
+
+        <strong>
+          <a
+            href="https://www.google.com/maps/dir/?api=1&destination=4035+Great+W+Pkwy,+Union+City,+GA+30291"
+            target="_blank"
+          >
+            4035 Great W Pkwy<br>
+            Union City, GA 30291
+          </a>
+        </strong>
+
+      </div>
+
+
+      <div class="contact-box">
+
+        <small>
+          Hours
+        </small>
+
+        <strong>
+          9 AM – 7 PM
+        </strong>
+
+      </div>
+
+
+      <div class="contact-box">
+
+        <small>
+          Service Area
+        </small>
+
+        <strong>
+          Union City / Fulton County
+        </strong>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+  <div class="container footer">
+
+    <div>
+      <strong>
+        Yauto Car Care
+      </strong>
+    </div>
+
+    <p>
+      © 2026 Yauto Car Care. All rights reserved.
+    </p>
+
+  </div>
+
+</footer>
+
+</body>
+</html>
